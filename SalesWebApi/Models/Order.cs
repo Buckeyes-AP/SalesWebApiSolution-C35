@@ -17,7 +17,7 @@ namespace SalesWebApi.Models {
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 
-        public Order () { }
+        public Order () {}
         
 
     }

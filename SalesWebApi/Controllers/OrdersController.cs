@@ -31,7 +31,8 @@ namespace SalesWebApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(int id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Orders.Include(x => x.Customer)
+                                             .SingleOrDefaultAsync(x => x.Id == id); 
 
             if (order == null)
             {

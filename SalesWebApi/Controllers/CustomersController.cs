@@ -23,7 +23,7 @@ namespace SalesWebApi.Controllers
         // GET: api/Customers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
-        {  //               preference with await.
+        {  //               preference with a wait.
             return await _context.Customers.ToListAsync();
         }
 
